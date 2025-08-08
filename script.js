@@ -12,3 +12,10 @@ header.innerHTML = `
     </nav>
 </header>
 `;
+
+footer.innerHTML = `
+<footer class="footer">
+    <p>© 2025 riflebird</p>
+    <p>Powered by <a href="https://neocities.org">Neocities</a></p>
+</footer>
+`
