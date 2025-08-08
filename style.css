@@ -2,14 +2,28 @@
    HTML content. To learn how to do something, just try searching Google for questions like
    "how to change link color." */
 
+/* == Style reset == */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 * {
   margin: 0;
-  padding-right: 0;
-  box-sizing: border-box;
+  overflow-wrap: break-word;
   /* outline: 1px solid red; */
 }
 
+input, button, textarea, select {
+  font: inherit;
+}
+
+p {
+  text-wrap: pretty;
+}
+
 body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
   background-color: #c9dde9;
   margin: 61px 5px 0 5px;
   color: black;
