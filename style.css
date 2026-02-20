@@ -2,6 +2,20 @@
    HTML content. To learn how to do something, just try searching Google for questions like
    "how to change link color." */
 
+/* == Color palette == */
+:root {
+  --bg-color: #000000;
+  --bg-image: url(/assets/bg-image.jpg);
+  --scroll-image: url("https://images.unsplash.com/photo-1536566482680-fca31930a0bd?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  --box-color: #f7cad0;
+  --text-color: #ffffff;
+  --accent-color: #ff7f50;
+  --link-color: #85b16d;
+  --header-bg: #2f3632;
+  --footer-bg: #2f3632;
+  --card-bg: #4e5e5a;
+}
+
 /* == Style reset == */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -21,46 +35,36 @@ p {
   text-wrap: pretty;
 }
 
-/* == Color palette == */
-:root {
-  --bg-color: #f7d8ca;
-  --bg-image: url(/assets/bg-image.jpg);
-  --box-color: #f7cad0;
-  --text-color: #222;
-  --accent-color: #ff7f50;
-  --link-color: #0066cc;
-  --header-bg: #faecea;
-  --footer-bg: #ffffff;
+a {
+  color: var(--link-color);
+  text-decoration: none;
 }
 
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  background-color: var(--bg-color);
-  background-image: var(--bg-image);
   background-size: cover;
-  margin: 61px 5px 0 5px;
   color: var(--text-color);
   font-family: Verdana;
   overflow-x: hidden;
   min-height: 100vh;
+  background-color: var(--bg-color);
 }
 
 .wrapper{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  
+  margin: 0px 5px 0 5px;
 }
 
 .header {
-  position: fixed;
   top: 0px;
-  width: 99%;
+  width: 100%;
   background-color: var(--header-bg);
-  padding: 10px 0px 5px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 0 0px 30px 30px;
+  opacity: 0.9;
+  border-bottom: #3a723b 4px solid;
+  color: #c5caba;
 }
 
 .header nav {
@@ -72,35 +76,117 @@ body {
   padding: 0 12px 0 20px;
   text-decoration: none;
   font-size: 18px;
+  color: var(--link-color);
 }
 
-.header img {
-  float: left;
-  padding-left: 15px;
-  width: 55px;
-}
 
 .footer {
   background-color: var(--footer-bg);
   text-align: center;
   bottom: 0;
   width: 100%;
+  color: aliceblue;
+  border-top: #3a723b 2px solid;
+}
+
+.footer a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+p.thick {
+  font-weight: bold;
 }
 
 .content-box {
-  background: rgba(255, 255, 255, 0.5);
+  /* background: rgba(255, 255, 255, 0.5); */
   margin: 1rem auto;
   padding: 1rem;
-  min-height: calc(100vh - 61px);
+  min-height: 100vh;
   width: 90%;
   max-width: 1200px;
-  box-sizing: border-box;
-  margin: auto;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  border: #222 6px solid;
+  opacity: 0.9;
+}
+
+.static {
+  animation: scroll 20s linear infinite;
+  background-image: var(--scroll-image);
+  color: #eee;
+  height: 100vh;
+  min-width: 360px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@keyframes scroll {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 1000px;
+  }
 }
 
 @media (max-width: 600px) {
-  .content {
+  .content-box {
     width: 100%;
     margin: 0;
   }
+  .card{
+    grid-template-columns: auto;
+  }
 }
+
+.parallax {
+  height: 100%;
+  max-height: 600px;
+  width: 100%;
+  background-color: hsla(200,40%,30%,.4);
+  background-image:   
+    url('https://78.media.tumblr.com/cae86e76225a25b17332dfc9cf8b1121/tumblr_p7n8kqHMuD1uy4lhuo1_540.png'), 
+    url('https://78.media.tumblr.com/66445d34fe560351d474af69ef3f2fb0/tumblr_p7n908E1Jb1uy4lhuo1_1280.png'),
+    url('https://78.media.tumblr.com/8cd0a12b7d9d5ba2c7d26f42c25de99f/tumblr_p7n8kqHMuD1uy4lhuo2_1280.png'),
+    url('https://78.media.tumblr.com/5ecb41b654f4e8878f59445b948ede50/tumblr_p7n8on19cV1uy4lhuo1_1280.png'),
+    url('https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png');
+  background-repeat: repeat-x;
+  background-position: 
+    0 20%,
+    0 100%,
+    0 50%,
+    0 100%,
+    0 0;
+  background-size: 
+    2500px,
+    800px,
+    500px 200px,
+    1000px,
+    400px 260px;
+  animation: 50s para infinite linear;
+  }
+
+@keyframes para {
+  100% {
+    background-position: 
+      -5000px 20%,
+      -800px 95%,
+      500px 50%,
+      1000px 100%,
+      400px 0;
+    }
+  }
