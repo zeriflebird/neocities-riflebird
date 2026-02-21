@@ -7,7 +7,7 @@ header.innerHTML = `
     
     <nav>   
         <p class="thick">riflebird</p>
-        <p>.neocities.com</p>
+        <p>.neocities.org</p>
         <a href="/not_found.html">About</a>
         <a href="https://cara.app/riflebird">Gallery</a>
         <a href="/not_found.html">Contact</a>
