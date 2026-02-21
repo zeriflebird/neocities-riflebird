@@ -1,6 +1,6 @@
 /* Hello and welcome to the hellscape that is javascript!
 Behold, but don't be scared as we descend into madness... */
-
+const lastModified = new Date(document.lastModified).toISOString().split('T')[0];
 // Header
 header.innerHTML = `
 <header id="header" class="header">
@@ -19,6 +19,7 @@ header.innerHTML = `
 footer.innerHTML = `
 <footer class="footer">
     <p>Powered by <a href="https://neocities.org">Neocities</a></p>
+    <p class="faint" >Last updated: ${lastModified}</p>
 </footer>
 `
 

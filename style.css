@@ -98,6 +98,11 @@ p.thick {
   font-weight: bold;
 }
 
+p.faint {
+  opacity: 0.5;
+  font-size: smaller;
+}
+
 .content-box {
   /* background: rgba(255, 255, 255, 0.5); */
   margin: 1rem auto;
