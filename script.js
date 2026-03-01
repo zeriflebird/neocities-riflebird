@@ -18,7 +18,7 @@ header.innerHTML = `
 // Footer
 footer.innerHTML = `
 <footer class="footer">
-    <p>Powered by <a href="https://neocities.org">Neocities</a></p>
+    <p>Powered by <a href="https://neocities.org/site/riflebird">Neocities</a></p>
     <p class="faint" >Last updated: ${lastModified}</p>
 </footer>
 `

@@ -40,6 +40,7 @@ a {
   text-decoration: none;
 }
 
+
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -56,6 +57,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   margin: 0px 5px 0 5px;
+  position: relative;
 }
 
 .header {
@@ -64,6 +66,7 @@ body {
   background-color: var(--header-bg);
   opacity: 0.9;
   border-bottom: #3a723b 4px solid;
+  padding: 0 10px 0 10px;
   color: #c5caba;
 }
 
@@ -103,11 +106,9 @@ p.faint {
   font-size: smaller;
 }
 
-.content-box {
-  /* background: rgba(255, 255, 255, 0.5); */
+.content-box-2 {
   margin: 1rem auto;
   padding: 1rem;
-  min-height: 100vh;
   width: 90%;
   max-width: 1200px;
   display: grid;
@@ -115,12 +116,33 @@ p.faint {
   gap: 1rem;
 }
 
+.content-box-3 {
+  margin: 1rem auto;
+  padding: 1rem;
+  width: 90%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1rem;
+}
+
 .card {
   background-color: var(--card-bg);
   padding: 1rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  border: #222 6px solid;
+  border: #222 4px solid;
   opacity: 0.9;
+  font-size: small;
+  position: relative;
+}
+
+.card .overlay-1 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100px;
+  transform: translate(20%, -10%);
+  height: auto;
 }
 
 .static {
