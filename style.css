@@ -9,7 +9,7 @@
   --scroll-image: url("https://images.unsplash.com/photo-1536566482680-fca31930a0bd?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   --box-color: #f7cad0;
   --text-color: #ffffff;
-  --accent-color: #ff7f50;
+  --accent-color: #df6594;
   --link-color: #85b16d;
   --header-bg: #2f3632;
   --footer-bg: #2f3632;
@@ -106,6 +106,16 @@ p.faint {
   font-size: smaller;
 }
 
+.content-box-1 {
+  margin: 1rem auto;
+  padding: 1rem;
+  width: 90%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: auto;
+  gap: 1rem;
+}
+
 .content-box-2 {
   margin: 1rem auto;
   padding: 1rem;
@@ -145,7 +155,7 @@ p.faint {
   height: auto;
 }
 
-/* gallery */
+/* == gallery == */
 
 #gallery {
   display: grid;
@@ -157,6 +167,13 @@ p.faint {
 a.gallery-item {
   display: block;
   aspect-ratio: 1/1;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+a.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 
 a.gallery-item img {
@@ -164,6 +181,75 @@ a.gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 3px; 
+  transition: transform .25s ease, filter .3s ease;
+}
+
+a.gallery-item:hover img {
+  transform: scale(1.1);         
+  filter: brightness(1.05);  
+  z-index: 1;
+}
+
+.gallery-year-divider {
+  grid-column: 1 / -1; 
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent-color);
+  border-top: 2px solid var(--accent-color);
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+#gallery a:nth-child(5n+1) { transform: rotate( 3deg); }
+#gallery a:nth-child(5n+2) { transform: rotate(-2deg); }
+#gallery a:nth-child(5n+3) { transform: rotate( 5deg); }
+#gallery a:nth-child(5n+4) { transform: rotate(-4deg); }
+#gallery a:nth-child(5n+5) { transform: rotate( 1deg); }
+
+#lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,.75);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+#lightbox.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 0 20px rgba(0,0,0,.5);
+  border-radius: 4px;
+}
+#lightbox .caption {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center;
+  max-width: 90%;
+  line-height: 1.4;
+}
+
+#lightbox .caption a {
+  color: var(--link-color);
+  text-decoration: underline;
 }
 
 /* animation */
@@ -209,7 +295,7 @@ a.gallery-item img {
   width: 100%;
   background-color: hsla(200,40%,30%,.4);
   background-image:   
-    url('https://78.media.tumblr.com/cae86e76225a25b17332dfc9cf8b1121/tumblr_p7n8kqHMuD1uy4lhuo1_540.png'), 
+    url('/assets/foreground.png'), 
     url('https://78.media.tumblr.com/66445d34fe560351d474af69ef3f2fb0/tumblr_p7n908E1Jb1uy4lhuo1_1280.png'),
     url('https://78.media.tumblr.com/8cd0a12b7d9d5ba2c7d26f42c25de99f/tumblr_p7n8kqHMuD1uy4lhuo2_1280.png'),
     url('https://78.media.tumblr.com/5ecb41b654f4e8878f59445b948ede50/tumblr_p7n8on19cV1uy4lhuo1_1280.png'),
