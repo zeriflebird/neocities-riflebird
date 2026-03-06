@@ -9,7 +9,14 @@ header.innerHTML = `
         <p class="thick">riflebird</p>
         <p>.neocities.org</p>
         <a href="/index.html">About</a>
-        <a href="/gallery.html">Gallery</a>
+        <div class="dropdown">
+            <a onclick="dropdown()" class="dropbtn">Art</a>
+            <div id="myDropdown" class="dropdown-content">
+            <a href="/gallery.html">Gallery</a>
+            <a href="not-found.html">Characters</a>
+            <a href="not-found.html">Other</a>
+            </div>
+        </div>
         <a href="/not_found.html">Contact</a>
     </nav>
 </header>
@@ -23,3 +30,20 @@ footer.innerHTML = `
 </footer>
 `
 
+function dropdown() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}

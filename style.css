@@ -2,7 +2,7 @@
    HTML content. To learn how to do something, just try searching Google for questions like
    "how to change link color." */
 
-/* == Color palette == */
+/* ========= Color palette ========= */
 :root {
   --bg-color: #000000;
   --bg-image: url(/assets/bg-image.jpg);
@@ -16,7 +16,7 @@
   --card-bg: #4e5e5a;
 }
 
-/* == Style reset == */
+/* ========= Style reset ========= */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -57,8 +57,9 @@ body {
   flex-direction: column;
   min-height: 100vh;
   margin: 0px 5px 0 5px;
-  position: relative;
 }
+
+/* ========= header ========= */
 
 .header {
   top: 0px;
@@ -68,6 +69,8 @@ body {
   border-bottom: #3a723b 4px solid;
   padding: 0 10px 0 10px;
   color: #c5caba;
+  z-index: 1000;
+  position: relative;
 }
 
 .header nav {
@@ -82,6 +85,47 @@ body {
   color: var(--link-color);
 }
 
+.dropbtn {
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  z-index: 1000;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--header-bg);
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1001; 
+  border-radius: 4px;
+  
+}
+
+
+.dropdown-content a {
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  z-index: 1000;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* .dropdown a:hover {background-color: #ddd;} */
+
+.show {display: block;}
+
+/* ========= footer ========= */
 
 .footer {
   background-color: var(--footer-bg);
@@ -106,6 +150,8 @@ p.faint {
   font-size: smaller;
 }
 
+/* ========= stuffamajig ========= */
+
 .content-box-1 {
   margin: 1rem auto;
   padding: 1rem;
@@ -114,6 +160,7 @@ p.faint {
   display: grid;
   grid-template-columns: auto;
   gap: 1rem;
+  z-index: 1;
 }
 
 .content-box-2 {
@@ -124,6 +171,7 @@ p.faint {
   display: grid;
   grid-template-columns: auto auto;
   gap: 1rem;
+  z-index: 0;
 }
 
 .content-box-3 {
@@ -144,6 +192,7 @@ p.faint {
   opacity: 0.9;
   font-size: small;
   position: relative;
+
 }
 
 .card .overlay-1 {
@@ -155,7 +204,7 @@ p.faint {
   height: auto;
 }
 
-/* == gallery == */
+/* ========= gallery ========= */
 
 #gallery {
   display: grid;
@@ -235,6 +284,7 @@ a.gallery-item:hover img {
   box-shadow: 0 0 20px rgba(0,0,0,.5);
   border-radius: 4px;
 }
+
 #lightbox .caption {
   position: absolute;
   bottom: 20px;
@@ -251,8 +301,34 @@ a.gallery-item:hover img {
   color: var(--link-color);
   text-decoration: underline;
 }
+.sketchbook-item {
+  display: block;
+  max-width: 100%;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  border-radius: 3px;
+}
 
-/* animation */
+.sketchbook-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.sketchbook-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 3px;
+  transition: transform .25s ease, filter .3s ease;
+}
+
+.sketchbook-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+
+/* ========= bg animation ========= */
 
 .static {
   animation: scroll 20s linear infinite;

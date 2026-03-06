@@ -153,6 +153,11 @@ const FILES = [
     "file": "https://images.artfight.net/attack/th_quL9zqdf58pru1PLCLIv5ENacRjARpGuTVCEacmUPi3NBgl001HIQcTinwUv.gif?t=1721812591",
     "tags": "2024 artfight"
   },
+  {
+    "file": "https://res.cloudinary.com/dqes5rgqn/image/upload/v1772796437/IMG_20260306_0001_wgnx1b.webp",
+    "tags": "sketchbook 2025"
+  },
+
 ]
 // {
 //     "file": "",
@@ -182,13 +187,23 @@ FILES.forEach(e =>{
     divider.textContent = year;
     TARGET.append(divider);
     lastYear = year;
+
+    
   }
   
   // create an anchor tag
   const link = document.createElement('a');
-  link.href = e.file;
-  link.classList.add('gallery-item');
   link.dataset.tags = e.tags;
+  if (e.credit) link.dataset.credit = e.credit;
+  
+  // Check if it's a sketchbook item
+  if (e.tags.includes('sketchbook')) {
+    link.classList.add('sketchbook-item');  // Different class for styling
+    link.href = 'not-found.html';  // Link to the sketchbook page (create this file separately)
+  } else {
+    link.classList.add('gallery-item');  // Normal gallery item
+    link.href = e.file;
+  }
   // Maybe you can use the tags here for the filtering
   
   // create and img tag and append to anchor
