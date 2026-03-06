@@ -206,14 +206,22 @@ p.faint {
 
 #gallery {
   display: grid;
+  width: 100%;
+  max-width: fit-content;
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
   padding: 1rem;
 }
 
+#gallery > a {
+  min-width: 0;
+}
+
 a.gallery-item {
   display: block;
+  box-sizing: border-box;
   aspect-ratio: 1/1;
+  width: 100%;
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
@@ -250,11 +258,11 @@ a.gallery-item:hover img {
   letter-spacing: 2px;
 }
 
-#gallery a:nth-child(5n+1) { transform: rotate( 3deg); }
-#gallery a:nth-child(5n+2) { transform: rotate(-2deg); }
-#gallery a:nth-child(5n+3) { transform: rotate( 5deg); }
-#gallery a:nth-child(5n+4) { transform: rotate(-4deg); }
-#gallery a:nth-child(5n+5) { transform: rotate( 1deg); }
+#gallery a.gallery-item:nth-child(5n+1) { transform: rotate( 3deg); }
+#gallery a.gallery-item:nth-child(5n+2) { transform: rotate(-2deg); }
+#gallery a.gallery-item:nth-child(5n+3) { transform: rotate( 5deg); }
+#gallery a.gallery-item:nth-child(5n+4) { transform: rotate(-4deg); }
+#gallery a.gallery-item:nth-child(5n+5) { transform: rotate( 1deg); }
 
 #lightbox {
   position: fixed;
@@ -301,6 +309,7 @@ a.gallery-item:hover img {
 }
 .sketchbook-item {
   display: block;
+  aspect-ratio: 1 / 1;
   max-width: 100%;
   transition: transform 0.5s ease, box-shadow 0.5s ease;
   border-radius: 3px;
@@ -313,7 +322,6 @@ a.gallery-item:hover img {
 }
 
 .sketchbook-item img {
-  display: block;
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -326,7 +334,7 @@ a.gallery-item:hover img {
   filter: brightness(1.05);
 }
 
-/* stamp by stupied https://codepen.io/Stupiedidiot/pen/wBMGejN */
+/* stamp css by stupied https://codepen.io/Stupiedidiot/pen/wBMGejN */
 
 
 .stamp {
