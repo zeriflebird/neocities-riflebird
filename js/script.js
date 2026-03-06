@@ -13,8 +13,8 @@ header.innerHTML = `
             <a onclick="dropdown()" class="dropbtn">Art</a>
             <div id="myDropdown" class="dropdown-content">
             <a href="/gallery.html">Gallery</a>
-            <a href="not-found.html">Characters</a>
-            <a href="not-found.html">Other</a>
+            <a href="/not_found.html">Characters</a>
+            <a href="/gallery/sketchbooks.html">Other</a>
             </div>
         </div>
         <a href="/not_found.html">Contact</a>

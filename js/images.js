@@ -157,7 +157,50 @@ const FILES = [
     "file": "https://res.cloudinary.com/dqes5rgqn/image/upload/v1772796437/IMG_20260306_0001_wgnx1b.webp",
     "tags": "sketchbook 2025"
   },
-
+  {
+    "file": "https://images.artfight.net/attack/brrS4UtlLTcpfPjLCw5zmjkSKEY2qSAB77XRGth2VuMpCua3eYl42p0bqelH.jpg?t=1722190042",
+    "tags": "2024 artfight"
+  },
+  {
+    "file": "https://images.artfight.net/attack/QoyJKGdIYF2SQd30UA402khd0tS6iN890iHdWamNt3kTFfMiYU9v8Tty0Gm7.jpg?t=1722407555",
+    "tags": "2024 artfight"
+  },
+  {
+    "file": "https://images.artfight.net/attack/oRBkl2ojiopyGwpyvJ7N9CtYuHlg00czknfGHd3TxfdaDAj6tqJwRHzhfHjV.jpg?t=1722596061",
+    "tags": "2024 artfight"
+  },
+  {
+    "file": "https://images.artfight.net/attack/RmcUg69MOtzh2CNmzfmnW7mP7UI1uHNJOwg290mfFP3vX1PrDduUUZJ241aH.png?t=1751465199",
+    "tags": "2025 artfight"
+  },
+  {
+    "file": "https://images.artfight.net/attack/D4ezwpYYzAEt0PkgTc37yq36MKpSD9B6XU2ogX1iafKxTL7MelCojdv9TkSF.png?t=1751532175",
+    "tags": "2025 artfight"
+  },
+  {
+    "file": "https://images.artfight.net/attack/dlhHFLUM2n9Qo3tziVg8BMDH3tMrtJeTYzGG2KiltXsJ4DnVKvKy80EfBpgi.png?t=1751570961",
+    "tags": "2025 artfight"
+  },
+  {
+    "file": "https://images.artfight.net/attack/U5G757NbgG7ZP0iy6g6EXyVUIYZX6jomPiX7fzNJHaTpSSXvadPe6GyGn4gq.png?t=1751959366",
+    "tags": "2025 artfight"
+  },
+  {
+    "file": "https://images.artfight.net/attack/mfjMgHhJZIM09syuwKnuO4kh29nvZN9PcLVKrowXpaazghQRInv3d52aLJON.png?t=1752312116",
+    "tags": "2025 artfight"
+  },
+  {
+    "file": "https://images.artfight.net/attack/viXcKiY54CBEX2FIRUlP9kgW0xmmx7m210GEbGGFRSKANWcR5BlRpyPak8Dw.png?t=1752412894",
+    "tags": "2025 artfight"
+  },
+  {
+    "file": "https://images.artfight.net/attack/J59ooFfkJ6CC9O4vGrxbQmGzZieynXfYRHvcwgfjEeRt26fx0ullt7TmiVyA.png?t=1753087734",
+    "tags": "2025 artfight"
+  },
+  {
+    "file": "https://images.artfight.net/attack/niRqVs753aVWSTxLqVuFaLC9okcudC6lMSU16oD1FYWdDuA9CIaLJbTprw6C.png?t=1753120181",
+    "tags": "2025 artfight"
+  },
 ]
 // {
 //     "file": "",

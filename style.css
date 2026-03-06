@@ -6,7 +6,7 @@
 :root {
   --bg-color: #000000;
   --bg-image: url(/assets/bg-image.jpg);
-  --scroll-image: url("https://images.unsplash.com/photo-1536566482680-fca31930a0bd?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  --scroll-image: url(/assets/default.webp);
   --box-color: #f7cad0;
   --text-color: #ffffff;
   --accent-color: #df6594;
@@ -111,17 +111,15 @@ body {
   
 }
 
-
 .dropdown-content a {
-  padding: 10px 16px;
+  padding: 7px 16px;
   text-decoration: none;
   display: block;
+  font-size: medium;
   z-index: 1000;
 }
 
 .dropdown-content a:hover {background-color: #ddd;}
-
-/* .dropdown a:hover {background-color: #ddd;} */
 
 .show {display: block;}
 
@@ -326,6 +324,73 @@ a.gallery-item:hover img {
 .sketchbook-item:hover img {
   transform: scale(1.05);
   filter: brightness(1.05);
+}
+
+/* stamp by stupied https://codepen.io/Stupiedidiot/pen/wBMGejN */
+
+
+.stamp {
+  --fold: 50px;
+  --border: 3px;
+  --bg: var(--scroll-image);
+  top: 1rem;
+  left: 1rem;
+
+  max-width: 300px;
+  aspect-ratio: 3/4;
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  background-image: var(--bg);
+  background-size: cover;  
+  overflow: hidden;
+  clip-path: polygon(
+    calc(100% - var(--fold)) 0,
+    100% var(--fold),
+    100% 100%,
+    0 100%,
+    0 0
+  );
+  transition: clip-path 0.2s;
+
+  &:hover {
+    --folded: calc(var(--fold) + 20px);
+    clip-path: polygon(
+      calc(100% - var(--folded)) 0,
+      100% var(--folded),
+      100% 100%,
+      0 100%,
+      0 0
+    );
+    &::after {
+      width: var(--folded);
+    }
+  }
+
+  &::after{
+    transition: 0.2s;
+    content: "";
+    top: calc(0px - var(--border));
+    right: calc(0px - var(--border));
+    position: absolute;
+    width: var(--fold);
+    aspect-ratio: 1/1;
+    border: var(--border) solid;
+    background-color: white;
+    background: linear-gradient(45deg, white 50%, black 50%);
+    border: 2px solid;
+  }
+
+  & > span {
+    bottom: 0.2rem;
+    left: 0.2rem;
+    position: absolute;
+    text-shadow: 0 0 5px white;
+  }
+}
+
+.stamp--lookintomyeyes {
+  --bg: url(https://res.cloudinary.com/dqes5rgqn/image/upload/v1772796437/IMG_20260306_0001_wgnx1b.webp);
 }
 
 /* ========= bg animation ========= */
